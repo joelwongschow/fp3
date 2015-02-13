@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoStories Home</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0. maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="../css/leaflet.css" />
+
+    <script src="../js/leaflet.js"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/introHCI.js"></script>
+
+	<style>
+	body{
+	  padding: 0;
+	  margin: 0;
+    }
+
+    html, body, #map{
+     	height: 100%;
+    }
+    </style>
+</head>
+<body>
+	<div id="map"></div>
+
+	<script>
+
+		var map = L.map('map');
+
+		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i875mjb7'
+		}).addTo(map);
+
+
+        function onLocationFound(e) {
+			var radius = e.accuracy / 2;
+			var txt = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form>";
+			L.marker(e.latlng).addTo(map)
+				.bindPopup(txt).openPopup();
+
+
+			L.circle(e.latlng, radius).addTo(map);
+		}
+
+		function onLocationError(e) {
+			alert(e.message);
+		}
+
+		map.on('locationfound', onLocationFound);
+		map.on('locationerror', onLocationError);
+
+        map.locate({setView: true, maxZoom: 16});
+
+		var popup = L.popup();
+
+		function onMapClick(e) {
+		var txt = "Post a Story Here!";
+		var txt1 = "View Stories from Here";
+		var txt2 = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form>";
+			popup
+				.setLatLng(e.latlng)
+				.setContent(txt2)
+				.openOn(map);
+		}
+
+
+
+		map.on('click', onMapClick);
+	
+	</script>
+
+	<script>
+	function myFunction(){
+		console.log("GOT HERE");
+		document.getElementById('projectForm').submit();
+	}
+
+	function otherFunction(){
+		console.log("GOT HERE");
+		window.location.assign("./add.handlebars");
+	}
+	</script>
+</body>
+</html>

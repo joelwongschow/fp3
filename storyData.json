@@ -1,0 +1,22 @@
+{
+	"stories": [
+		{
+			"title": "I met Santa",
+			"location": "The North Pole",
+			"story": "It was cold",
+			"imageURL": "http://www.bestrussiantour.com/files/imagecache/tour_image_full/photos/image/arctic%20landscape.jpg"
+		},
+		{
+			"title": "I met Santa",
+			"location": "The North Pole",
+			"story": "It was cold",
+			"imageURL": "http://www.bestrussiantour.com/files/imagecache/tour_image_full/photos/image/arctic%20landscape.jpg"
+		},
+		{
+			"title": "I met Santa",
+			"location": "The North Pole",
+			"story": "It was cold",
+			"imageURL": "http://www.bestrussiantour.com/files/imagecache/tour_image_full/photos/image/arctic%20landscape.jpg"
+		}
+	]
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoStories Home</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0. maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="leaflet-0.7.3/leaflet.css" />
+
+    <script src="leaflet-0.7.3/leaflet.js"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/introHCI.js"></script>
+
+	<style>
+	body{
+	  padding: 0;
+	  margin: 0;
+    }
+
+    html, body, #map{
+     	height: 100%;
+    }
+    </style>
+</head>
+<body>
+	<div id="map"></div>
+
+	<script>
+
+		var map = L.map('map');
+
+		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i875mjb7'
+		}).addTo(map);
+
+
+        function onLocationFound(e) {
+			var radius = e.accuracy / 2;
+			var txt = "<form id='projectForm' role=form'><div class='form-group'><label for='description'>Your Story:</label><textarea type='text' class='form-control' id='description' rows='8' cols='20' placeholder='Write your story here...' align='center'></textarea></div><div><input type='button' onclick='myFunction()' value='Post Story'><input type='button' value='View Other Stories' onclick='otherFunction()'></div></form>";
+			L.marker(e.latlng).addTo(map)
+				.bindPopup(txt).openPopup();
+
+
+			L.circle(e.latlng, radius).addTo(map);
+		}
+
+		function onLocationError(e) {
+			alert(e.message);
+		}
+
+		map.on('locationfound', onLocationFound);
+		map.on('locationerror', onLocationError);
+
+        map.locate({setView: true, maxZoom: 16});
+
+		var popup = L.popup();
+
+		function onMapClick(e) {
+		var txt = "Post a Story Here!";
+		var txt1 = "View Stories from Here";
+		var txt2 = "<form id='projectForm' role=form'><div class='form-group'><label for='description'>Your Story:</label><textarea type='text' class='form-control' id='description' rows='8' cols='20' placeholder='Write your story here...' align='center'></textarea></div><div><input type='button' onclick='myFunction()' value='Post Story'><input type='button' value='View Other Stories' onclick='otherFuntion()'></div></form>";
+			popup
+				.setLatLng(e.latlng)
+				.setContent(txt2)
+				.openOn(map);
+		}
+
+
+
+		map.on('click', onMapClick);
+	
+	</script>
+
+	<script>
+	function myFunction(){
+		document.getElementById('projectForm').submit();
+	}
+
+	function otherFunction(){
+		window.location.assign("add.handlebars");
+	}
+	</script>
+</body>
+</html>
