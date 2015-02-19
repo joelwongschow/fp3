@@ -8,7 +8,7 @@ exports.addStory = function(req, res) {
 	newStory.title = req.query.title;
 	newStory.location = req.query.location;
 	newStory.story = req.query.story;
-	newStory.imageURL = "http://www.bestrussiantour.com/files/imagecache/tour_image_full/photos/image/arctic%20landscape.jpg";
+	newStory.imageURL = req.query.pic;
 
 	data["stories"].push(newStory);
 }
