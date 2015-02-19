@@ -41,8 +41,8 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/add', add.addStory);
-app.get('/practiceMap.handlebars', practiceMap.view);
-app.get('/storiesForum.handlebars', storiesForum.view);
+app.get('/practiceMap', practiceMap.view);
+app.get('/storiesForum', storiesForum.view);
 // Example route
 // app.get('/users', user.list);
 
