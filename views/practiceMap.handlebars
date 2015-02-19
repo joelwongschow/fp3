@@ -26,6 +26,7 @@
     </style>
 </head>
 <body>
+	<form><input type="button" value="Go Back" onClick="history.go(-1);return true;"></form>
 	<div id="map"></div>
 
 	<script>
@@ -43,7 +44,7 @@
 
         function onLocationFound(e) {
 			var radius = e.accuracy / 2;
-			var txt = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form>";
+			var txt = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form><input type='file' accept='image/*'' capture='camera'>";
 			L.marker(e.latlng).addTo(map)
 				.bindPopup(txt).openPopup();
 
@@ -65,7 +66,7 @@
 		function onMapClick(e) {
 		var txt = "Post a Story Here!";
 		var txt1 = "View Stories from Here";
-		var txt2 = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form>";
+		var txt2 = "<form id='addStoryForm' role='form' method='get' action='/add'><h3>Add a story</h3><div class='form-group'><p for='enter-title'>Title:</p><input type='text' class='form-control' id='enter-title' placeholder='Add a title!' name='title'></div><div class='form-group'><p for='enter-location'>Location:</p><input type='text' class='form-control' id='enter-location' placeholder='Where were you?' name='location'></div><div class='form-group'><p for='enter-story'>Story:</p><textarea type='text' class='form-control' id='enter-story' placeholder='Your story' name='story'></textarea></div><input type='submit' id='submitBtn' class='btn btn-default' value='Add the story'></input></form><input type='file' accept='image/*'' capture='camera'>";
 			popup
 				.setLatLng(e.latlng)
 				.setContent(txt2)
