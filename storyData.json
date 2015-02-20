@@ -1,22 +1,22 @@
 {
 	"stories": [
 		{
-			"title": "I met Santa",
-			"location": "The North Pole",
-			"story": "It was cold",
-			"imageURL": "http://lorempixel.com/400/200/city/"
+			"title": "Living at Geisel Priso- I mean Library",
+			"location": "UC San Diego, La Jolla",
+			"story": "Finals week. Studying.",
+			"imageURL": "http://ucsd.edu/timeline/images/campus-timeline.jpg"
 		},
 		{
-			"title": "I met Santa",
-			"location": "The North Pole",
-			"story": "It was cold",
-			"imageURL": "http://lorempixel.com/400/200/city/"
+			"title": "If everyone is doing it, is it really illegal?",
+			"location": "Tijuana, Mexico",
+			"story": "I don't wanna say much and risk embarassment or arrest, but sh*t was craaaaazy. Well, I suppose this site is anonymous. Still not risking it. But if you guys every get the chance, GO.",
+			"imageURL": "http://globalmexico.org/wp-content/uploads/2014/09/Tijuana.jpg"
 		},
 		{
-			"title": "I met Santa",
-			"location": "The North Pole",
-			"story": "It was cold",
-			"imageURL": "http://lorempixel.com/400/200/city/"
+			"title": "Museums everywhere",
+			"location": "Balboa Park, San Diego",
+			"story": "I had a great time here. The beautiful architecture coupled with San Diego's great weather resulted in an awesome experience for me. Despite the cool history exhibits, pretty foliage, and sleek statues, I would have to say I was most impressed by the fish. They were really big. ",
+			"imageURL": "http://www.sunlandrvresorts.com/wp-content/uploads/2011/05/balboa-park.jpeg"
 		}
 	]
 }
