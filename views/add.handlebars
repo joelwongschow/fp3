@@ -3,11 +3,25 @@
 <html>
 <head>
 	<title>Stories</title>
+	<link href="../css/simplepop.css" rel="stylesheet">
+
+<style>
+
+div.box{
+    background-color: lightgrey;
+    width: 80%;
+    padding: 0%;
+    border: 3px solid black;
+    margin: 10%;
+}
+
+</style>
+
 </head>
 
 <body>
 <div class="container">
-	<h1>Stories</h1>
+	<h1 align="center">Stories</h1>
 
 	<!-- <div>
 		<img src="http://lorempixel.com/500/500/people"></img>
@@ -16,17 +30,30 @@
 	</div> -->
 
 	{{#each stories}}
-	<div class="story">
+	<section id="sec-about" class="sec-features">
+	<div class="box">
+	  <div class="container">
+	    <div class="row">
+	      <article class="features-post">
+	        
+	<!--<div class="story">-->
 		<img src="{{imageURL}}" class="img-responsive img-rounded"></img>
-		<h3><div class="titles"><a href="#">{{title}}</a></div></h3>
-		<p>{{location}}</p>
+		<h2><div class="titles" align="center"><a>{{title}}</a></div></h2>
+		<h3><div align="center">{{location}}</div></h3>
 		<p>{{story}}</p>
 		<hr>
+	<!--</div>-->
+
+	      </article>
+	    </div>
+	  </div>
 	</div>
+	</section>
 	{{/each}}
 
+<!--
 	<h3>New story added!</h3>
-	<p><a href="/">Go back to stories</a></p>
+	<p><a href="/">Go back to our Homepage</a></p>
 
 	<form id="addStoryForm" role="form" method="get" action="/add">
 		<h3>Add a story</h3>
@@ -44,7 +71,7 @@
 	    </div>
 	    <input type="submit" id="submitBtn" class="btn btn-default" value="Add the story"></input>
 	</form>
-
+-->
 </div>
 </body>
 </html>
