@@ -1,3 +1,54 @@
+
+'use strict';
+
+// Call this function when the page loads (the "ready" event)
+$(document).ready(function() {
+	initializePage();
+})
+/*
+ * Function that is called when the document is ready.
+ */
+function initializePage() {
+	// add any functionality and listeners you want here
+
+  $(".title_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("title_clicked")
+  })
+
+  $(".map_nav_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("map_nav_clicked")
+  })
+
+  $(".map_img_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("map_img_clicked")
+  })
+
+  $(".map_text_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("map_text_clicked")
+  })
+
+  $(".stories_nav_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("stories_nav_clicked")
+  })
+
+$(".stories_img_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("stories_img_clicked")
+  })
+
+$(".stories_text_clicked").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+    woopra.track("stories_text_clicked")
+  })
+
+}
+
+
 $(function() {
   $('header a').click(function(e) {
     e.preventDefault();
@@ -30,3 +81,5 @@ $(function() {
     e.preventDefault();
   });
 });
+
+
