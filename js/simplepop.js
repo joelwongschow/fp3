@@ -13,36 +13,43 @@ function initializePage() {
 
   $(".title_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("title_click")
   })
 
   $(".map_nav_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("map_nav_click")
   })
 
   $(".map_img_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("map_img_click")
   })
 
   $(".map_text_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("map_text_click")
   })
 
   $(".stories_nav_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("stories_nav_click")
   })
 
 $(".stories_img_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("stories_img_click")
   })
 
 $(".stories_text_clicked").click(function(){
     //add your Woopra tracking code for version A's like button click event
+     console.log("button clicked");
     woopra.track("stories_text_click")
   })
 

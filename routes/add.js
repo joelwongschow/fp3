@@ -10,5 +10,5 @@ exports.addStory = function(req, res) {
 	newStory.story = req.query.story;
 	newStory.imageURL = "http://lorempixel.com/400/200/city";
 
-	data["stories"].unshift(newStory);
+	data["stories"].push(newStory);
 }
